@@ -23,29 +23,47 @@ body {
     
     @font-face {
         font-family: 'uncannyregular';
-    src: url('uncannyregular-z7lz-webfont.woff2') format('woff2'),
-         url('uncannyregular-z7lz-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+        src: url('uncannyregular-z7lz-webfont.woff2') format('woff2'),
+             url('uncannyregular-z7lz-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
     }
     
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
     --gutter: 30px;
-    --footer-height: 25px;
+
     
     font-family: 'uncannyregular', sans-serif;
 }
-
+header {
+  background: url('/TatisArt/BlueBGwithclouds.jpg');
+}
+title {
+    display: flex;
+    justify-content: center;
+    background: url('/TatisArt/BlueBGwithclouds.jpg');
+}
+.pageName {
+    font-size: 55px;
+    font-weight: bold;
+    justify-content: center;
+    align-self: center;
+    font-family: 'uncannyregular';
+    padding: 10px;
+    border: 15px;
+    color: rgba(201, 4, 112, 0.952);
+}
+    
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: calc(var(--footer-height));
-    position: relative;
     z-index: 1;
+    background: rgba(196, 222, 240, 0.8);
 }
 main::before {
     content:"";
@@ -59,11 +77,10 @@ main::before {
     opacity: 0.25
 
 }
-img {
-    position: relative;
-}
 section {
     position: relative;
+}
+.main-section {
     width: 1000px;
     max-width: 80%;
     display: flex;
@@ -76,31 +93,20 @@ section {
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
 }
-
-title {
+.artist-section {
+    width: 1000px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background: url('/TatisArt/BlueBGwithclouds.jpg');
-    height: var(--header-height);
-    box-shadow: var(--shadow);
+    align-items: center;
+    max-width: none;
 }
 
-footer {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+img {
+    position: relative;
 }
 
-title.logo {
-    font-size: 55px;
-    font-weight: bold;
-    justify-content: center;
-    align-self: center;
-    font-family: 'uncannyregular';
-    padding: 10px;
-    border: 15px;
-}
+
 h1 {
     position: relative;
     display: flex;
@@ -118,10 +124,29 @@ h2 {
     font-size: 1.8rem;
     font-family: 'uncannyregular';
     font-weight: bold;
-    border-color: blue;
-    background-color: blue;
-    background-size: 300px 100px;
+    color: rgba(201, 4, 112, 0.952);
 
+}
+content {
+    display: flex;
+}
+
+p {
+    margin: var(--gutter);
+    font-family: 'uncannyregular';
+    font-size: 20px;
+    color: rgba(201, 4, 112, 0.952);
+    justify-content: flex-end;
+}
+article {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/*BUTTONS*/
+.main {
+    margin: 10px;
+    border: 10px, 20px;
 }
 .artist {
     margin: 10px;
@@ -138,53 +163,57 @@ h2 {
 .contact {
     margin: 10px;
     border: 10px, 20px;
-}
+} 
 
-.main-logo {
-    animation: pulse 5s infinite ease-in-out;
-}
-
-header img {
-    height: var(--header-height);
-}
-
-
-
-content {
-    width: 80%;
-}
-
-p {
-    margin: var(--gutter);
-    font-family: 'uncannyregular';
-}
-article {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-  
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    height: var(--footer-height);
-    display: flex;
-    justify-content: flex-end;
-    background-image: url('/TatisArt/BlueBGwithclouds.jpg');
-    background-color: rgba(0, 0, 0, 0.25);
-    box-shadow: var(--shadow);
-}
-  
-  #girl-logo {
+#girl-logo {
     width: 10%;
     height: 10%;
 
   }
-  #snake {
+#snake {
       flex: 2;
   }
-  #snake-boy {
+#snake-boy {
       flex: 1;
-      margin-left: 40px;
+      margin-left: 80px;
   }
+
+  /*ARTIST*/
+  .headshot{
+    margin: 10px;
+    border: 10px, 20px;
+}  
+
+/*CONTACT*/
+.email {
+    max-width: 200px;
+    height: 800px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    font-size: x-large;
+    font-weight: bold;
+    padding-right: 10px;
+    border-right: 10px;
+    flex-shrink: 1;
+    color: rgba(201, 4, 112, 0.952);
+}
+.websites{
+    max-width: 400px;
+    height: 800px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    font-size: x-large;
+    font-weight: bold;
+  }
+.notbold {
+    font-weight: normal;
+}
+
+.illustration {
+    justify-self: flex-start;
+}
+.clear {
+    clear: both;
+}
