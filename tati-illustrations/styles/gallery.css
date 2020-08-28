@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
     --color1:  hsla(239, 97%, 37%, 1);
@@ -22,47 +25,43 @@ body {
     
     @font-face {
         font-family: 'uncannyregular';
-    src: url('uncannyregular-z7lz-webfont.woff2') format('woff2'),
-         url('uncannyregular-z7lz-webfont.woff') format('woff');
+    src: url('../webfontkit/uncannyregular-z7lz-webfont.woff2') format('woff2'),
+         url('../uncannyregular-z7lz-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     }
     
-    
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    
-    
     
     font-family: 'uncannyregular', sans-serif;
 
 }
+
 header {
     background: url('/TatisArt/BlueBGwithclouds.jpg');
 }
 
-title {
+h1{
     display: flex;
     justify-content: center;
     background: url('/TatisArt/BlueBGwithclouds.jpg');
-}
-.pageName {
-    font-size: 55px;
+    color: rgba(201, 4, 112, 0.952);
+    text-shadow: 2px 1px black;
+    font-size: 7vw;
     font-weight: bold;
-    justify-content: center;
     align-self: center;
     font-family: 'uncannyregular';
-    padding: 10px;
-    border: 15px;
+    padding: 8px;
     color: rgba(201, 4, 112, 0.952);
 }
 
 main {
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
     z-index: 1;
     background: rgba(196, 222, 240, 0.8);
     margin-bottom: calc(var(--footer-height))
@@ -80,16 +79,20 @@ main::before {
 }
 
 section {
+    width: 100%;
+    height: auto;
     position: relative;
     display: flex;
+    flex-basis: 1;
     justify-content: space-evenly;
     flex-direction: row;
+    
 }
 
 content {
     display: flex;
     justify-content: space-evenly;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: flex-start;
     align-content: center; 
 }
@@ -102,49 +105,134 @@ p {
     color: rgba(201, 4, 112, 0.952);
 }
 
-h1 {
+nav {
     display: flex;
     justify-content: center;
-    align-content: stretch;
     font-size: 55px;
     font-weight: bold;
     font-family: 'uncannyregular';
-    padding: 10px;
+    padding: 10px 10px 0;
     border: 15px;
+    margin-bottom: 0;
 }
-
+button {
+    background: darkorchid;
+    color: rgb(27, 36, 168);
+    font-size: 1.8vw;
+    padding: 2px 10px;
+    margin: 0 2.2vw;
+    border-radius: 10px;
+}
 /*BUTTONS*/
 .main {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .portraits {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .adventures {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .artist {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .contact {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 
 article {
     bottom: blue;
 }
 .gallery {
-    flex-grow: 1;
+    width: 30vw;
+    height: 23vw;
+    flex: inherit;
+    flex-basis: auto;
     background: rgb(130, 179, 199);
     background-size: auto;
     border: 15px double var(--color1);
-    box-shadow: inset 0 0 10px #000000;
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    box-shadow: inset 0 0 12px #000000;
+    padding: 2em;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    flex-direction: row;
+}
+.mask {
+    position: absolute;
+    opacity: 0;
+    top: 52%;
+    right:60%;
+    z-index: 1;
+    
+}
+.view {
+    position: relative;
+    float: left;
+}
+.name {
+    position: absolute;
+    color: rgb(165, 58, 219);
+    font-weight: bold;
+    font-size: 40px;
+    bottom: 90%;    
+}
+.fullView {
+    position: absolute;
+    font-size: 20px;
+    color:rgb(59, 5, 73);
+    font-style: italic;
+}
+.view:hover .gallery {
+    width: 95%;
+    height: 90%;
+    opacity: 0.4;
+    background-color:rgba(201, 4, 112, 0.6);
+}
+.view:hover .mask {
+    opacity: 1;
+  }
+/*Modal*/
+.modal {
+    display: none;
+    background-color: rgba(220,220,220,0.8);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    visibility: none;
+}
+.modal-content {
+  background-color: rgb(201, 4, 112);
+  padding: 15px;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid #888;
+  width: 75%;
+  height: 80%;
+}
+#caption {
+    color: blue;
+    font-size: 500%;
+    bottom: 18%;
+    left:33%;
+    position: absolute;   
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

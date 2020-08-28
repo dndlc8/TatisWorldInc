@@ -1,4 +1,6 @@
-
+* {
+    box-sizing: border-box;
+  }
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
     --color1:  hsla(239, 97%, 37%, 1);
@@ -23,47 +25,125 @@ body {
     
     @font-face {
         font-family: 'uncannyregular';
-        src: url('uncannyregular-z7lz-webfont.woff2') format('woff2'),
-             url('uncannyregular-z7lz-webfont.woff') format('woff');
+        src: url('../webfontkit/uncannyregular-z7lz-webfont.woff2') format('woff2'),
+             url('../webfontkit/uncannyregular-z7lz-webfont.woff') format('woff');
         font-weight: normal;
         font-style: normal;
+        width: 100%;
+        display: grid;
+
     }
-    
-    
+
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    --gutter: 30px;
 
-    
     font-family: 'uncannyregular', sans-serif;
+    height: 100%;
+
 }
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.66%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+[class*="col-"] {
+    float: ;
+    padding: 15px;
+    border:1px solid red
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 8.33%);
+      grid-template-rows: repeat (10, 10%)
+  }
+  .grid::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
 header {
   background: url('/TatisArt/BlueBGwithclouds.jpg');
+  height: 170px;
+  width: 100%;
+  line-height: 1.2;
+  display: grid;
+  grid-template-columns: 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
 }
 title {
     display: flex;
     justify-content: center;
-    background: url('/TatisArt/BlueBGwithclouds.jpg');
-}
-.pageName {
-    font-size: 55px;
+    font-size: 80px;
     font-weight: bold;
-    justify-content: center;
     align-self: center;
-    font-family: 'uncannyregular';
+    text-align: center;
+    font-family: 'uncannyregular', sans-serif;
     padding: 10px;
     border: 15px;
     color: rgba(201, 4, 112, 0.952);
+    text-shadow: 2px 1px black;
 }
     
 main {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+    z-index: -2;
     background: rgba(196, 222, 240, 0.8);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
 }
 main::before {
     content:"";
@@ -74,124 +154,196 @@ main::before {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.25
-
+    opacity: 0.25;
+    z-index:-2;
 }
 section {
     position: relative;
 }
-.main-section {
-    width: 1000px;
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
-}
-.artist-section {
-    width: 1000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: none;
-}
-
-img {
-    position: relative;
-}
-
-
-h1 {
-    position: relative;
+nav {
     display: flex;
     justify-content: center;
-    align-content: stretch;
     font-size: 55px;
     font-weight: bold;
     font-family: 'uncannyregular';
-    padding: 10px;
+    padding: 10px 10px 0;
     border: 15px;
+    width: 100%;
+    margin-bottom: 0;
 }
-
-h2 {
-    position: relative;
-    font-size: 1.8rem;
+h1 {
+    position: absolute;
     font-family: 'uncannyregular';
     font-weight: bold;
+    font-size: 3vw;
+    line-height: 3vw;
     color: rgba(201, 4, 112, 0.952);
-
+    text-shadow: 2px 1px black;
+    padding: 10px;
+    margin-bottom: 10px;
+    bottom: 83%;
+    right: 54%;
+    
+}
+h2 {
+    position: absolute;
+    font-family: 'uncannyregular';
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    color: black;
+    text-shadow: 1px 1px rgba(196, 13, 114, 0.699);
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    margin: 10px;
+    bottom: 74%;
+    right: 53%;
 }
 content {
     display: flex;
 }
-
 p {
-    margin: var(--gutter);
     font-family: 'uncannyregular';
-    font-size: 20px;
-    color: rgba(201, 4, 112, 0.952);
-    justify-content: flex-end;
+    color: black;
+    text-shadow: 1px 1px rgba(196, 13, 114, 0.699);
+    text-align: center;   
 }
 article {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 30px;
+}
+button {
+    background: darkorchid;
+    color: rgb(27, 36, 168);
+    font-size: 1.8vw;
+    padding: 2px 10px;
+    margin: 0 2.2vw;
+    border-radius: 10px;
 }
 /*BUTTONS*/
 .main {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .artist {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .portraits {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .adventures {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 }
 .contact {
-    margin: 10px;
     border: 10px, 20px;
+    flex-basis: auto;
 } 
 
-#girl-logo {
-    width: 10%;
-    height: 10%;
 
+.girl-logo {
+    position: absolute;
+    width: 20vw;
+    height: 20vh;
+    bottom: 91.5%;
   }
-#snake {
+.snake {
       flex: 2;
   }
-#snake-boy {
+.snake-boy {
       flex: 1;
       margin-left: 80px;
   }
-
-  /*ARTIST*/
-  .headshot{
+/*INDEX*/
+.main-section {
+    position: relative;
+    text-align: center; 
+    height: 200vw;
+    width: 88vw;
+}
+.full-content {
+    left: 12%;
+    width: 88vw;
+    height: 100%;
+}
+.cloud-title-box {
+    position: absolute;
+    right: 60%;
+    bottom: 65%;
+}
+.cloud-para-box {
+    position: absolute;
+    left: 40%;
+    bottom: 10%;
+    width: 40%;
+   z-index: -1;
+}
+.main-content {
+    display: flex;
+    flex-flow: column wrap;
+    width: 55%;
+    position: absolute;
+    font-size: 1.9vw;
+    line-height: 1.9vw;
+    padding: 3px;
+    margin: 20px;
+    bottom: 13%;
+    left: 23%;
+}
+.main-para-one {
+    width: 60vw;
+    align-self: center;
+}
+.main-para-two {
+    width: 68vw;
+    
+}
+.main-para-three {
+    width: 50vw;
+    align-self: center;
+}
+/*ARTIST*/
+.container {
+    display: flex;
+}
+.laying-Tati {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+.artist-section {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+}
+.headshot{
     margin: 10px;
     border: 10px, 20px;
 }  
+.about-Tati {
+    font-size: 2vw;
+    width: 60vw;
+
+}
+.first, .second, .third {
+    text-align: left;
+}
+
 
 /*CONTACT*/
 .email {
-    max-width: 200px;
-    height: 800px;
+    max-width: 100vw;
+    height: 80vw;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
-    font-size: x-large;
+    font-size: 3vw;
     font-weight: bold;
     padding-right: 10px;
     border-right: 10px;
@@ -199,20 +351,26 @@ article {
     color: rgba(201, 4, 112, 0.952);
 }
 .websites{
-    max-width: 400px;
-    height: 800px;
+    max-width: 100vw;
+    height: 80vw;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
-    font-size: x-large;
+    font-size: 3vw;
     font-weight: bold;
-  }
+    
+}
+.email, .websites {
+    margin: 8vw;
+}
 .notbold {
     font-weight: normal;
 }
 
 .illustration {
     justify-self: flex-start;
+    left: 10%;
+    bottom: 10%;
 }
 .clear {
     clear: both;
